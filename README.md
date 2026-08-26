@@ -24,7 +24,7 @@
 - **Address**: 5, Opposite Ayyappa Swamy Temple, Shirur Park, 2nd Stage, Vinayak Nagar, Hubballi, Karnataka 580021
 - **Opening Hours**: Monday – Sunday: 12:00 PM – 10:00 PM
 - **Phone**: +91 77955 66030
-- **Google Maps**: [The Slow House - Cafe on Google Maps](https://www.google.com/maps/place/The+slow+house-+Cafe/@15.3610736,75.1181613,17z)
+- **Google Maps**: [The Slow House - Cafe on Google Maps](https://www.google.com/maps/place/The+slow+house-+Cafe/@15.3610151,75.1182262,953m/data=!3m1!1e3!4m6!3m5!1s0x3bb8d72c493a48c3:0x161ab21d5c85307e!8m2!3d15.3610736!4d75.1181613!16s%2Fg%2F11nc10hhbs?entry=tts)
 
 ---
 

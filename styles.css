@@ -2012,34 +2012,55 @@ button, input, select, textarea {
   background: transparent;
   padding: 0;
   margin: auto;
-  width: 100%;
-  max-width: 95vw;
+  position: fixed;
+  inset: 0;
+  width: min(540px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
   max-height: 90vh;
+  max-height: 90dvh;
+  overflow: visible;
+  z-index: 2500;
+}
+
+.modal-dialog[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .modal-inner {
   background-color: var(--bg-dark-surface);
   border: 1px solid var(--accent-gold-border);
-  border-radius: 16px;
-  padding: clamp(20px, 4vw, 36px);
+  border-radius: 18px;
+  padding: clamp(20px, 4.5vw, 36px);
   color: var(--text-light-primary);
+  width: 100%;
   max-height: 85vh;
+  max-height: 85dvh;
   overflow-y: auto;
-  box-shadow: var(--shadow-lg), 0 0 60px rgba(0, 0, 0, 0.8);
+  box-shadow: var(--shadow-lg), 0 0 70px rgba(0, 0, 0, 0.9);
   -webkit-overflow-scrolling: touch;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 .modal-narrow {
-  width: min(520px, 95vw);
+  width: 100%;
+}
+
+.menu-modal.modal-dialog {
+  width: min(960px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
 }
 
 .menu-modal .modal-inner {
-  width: min(960px, 95vw);
+  width: 100%;
 }
 
 .modal-header {
@@ -2931,6 +2952,27 @@ button, input, select, textarea {
 
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modal-dialog {
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px) !important;
+    margin: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    position: fixed !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .modal-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: auto !important;
+    padding: 22px 18px !important;
   }
 
   .modal-menu-grid {
