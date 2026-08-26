@@ -256,6 +256,23 @@ button, input, select, textarea {
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo:hover .logo-mark {
+  transform: rotate(-8deg) scale(1.08);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 22px rgba(212, 154, 98, 0.45);
+}
+
+.brand-logo:hover .logo-title {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(212, 154, 98, 0.5);
 }
 
 .logo-mark {
@@ -269,11 +286,13 @@ button, input, select, textarea {
   justify-content: center;
   color: var(--accent-gold);
   box-shadow: 0 0 16px rgba(212, 154, 98, 0.2);
+  transition: all 0.35s var(--ease-out-expo);
 }
 
 .logo-mark svg {
   width: 22px;
   height: 22px;
+  transition: transform 0.35s var(--ease-spring);
 }
 
 .logo-text {
@@ -289,6 +308,7 @@ button, input, select, textarea {
   color: var(--text-light-primary);
   line-height: 1.1;
   white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 .logo-subtitle {
@@ -323,27 +343,51 @@ button, input, select, textarea {
   letter-spacing: 0.09em;
   color: var(--text-light-secondary);
   position: relative;
-  padding: 8px 0;
+  padding: 8px 4px;
   white-space: nowrap;
   text-transform: uppercase;
-  transition: color var(--transition-fast);
+  transition: color 0.25s ease, transform 0.25s var(--ease-out-expo), text-shadow 0.25s ease, letter-spacing 0.25s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--text-light-primary);
-}
-
-.nav-link.active::after {
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
   height: 2px;
-  background-color: var(--accent-gold);
+  background: linear-gradient(90deg, transparent, #d49a62, #f5c796, #d49a62, transparent);
   border-radius: 2px;
-  box-shadow: 0 0 8px var(--accent-gold);
+  box-shadow: 0 0 10px rgba(212, 154, 98, 0.8);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s var(--ease-out-expo), opacity 0.35s ease;
+  opacity: 0;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-shadow: 0 0 14px rgba(212, 154, 98, 0.7);
+  letter-spacing: 0.12em;
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+
+.nav-link.active {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+  background-color: var(--accent-gold);
 }
 
 .header-actions {
@@ -354,8 +398,8 @@ button, input, select, textarea {
 }
 
 .icon-btn {
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
   color: var(--text-light-secondary);
   cursor: pointer;
   padding: 10px;
@@ -365,13 +409,26 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: all 0.3s var(--ease-out-expo);
   position: relative;
 }
 
 .icon-btn:hover {
-  color: var(--text-light-primary);
-  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background-color: rgba(212, 154, 98, 0.15);
+  border-color: rgba(212, 154, 98, 0.4);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 18px rgba(212, 154, 98, 0.3);
+}
+
+.icon-btn:hover svg {
+  transform: scale(1.08);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.icon-btn:hover .cart-badge {
+  transform: scale(1.25);
+  box-shadow: 0 0 12px rgba(212, 154, 98, 0.9);
 }
 
 .cart-badge {
@@ -389,6 +446,7 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 8px rgba(212, 154, 98, 0.6);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
 }
 
 /* Buttons */
