@@ -508,7 +508,10 @@
               </div>
             </div>
           </div>
-          <button class="btn btn-accent hover-glow" onclick="openReservationModal('Weekend Acoustic Night')">Reserve Seats for Session</button>
+          <div class="events-actions-row">
+            <button class="btn btn-accent hover-glow" onclick="openReservationModal('Weekend Acoustic Night')">Reserve Seats for Session</button>
+            <button class="btn btn-outline hover-glow" onclick="openArtistModal()">🎸 Perform With Us (Artist Registry)</button>
+          </div>
         </div>
         <div class="events-visual">
           <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80" alt="Live music acoustic guitar evening at cafe" class="events-img">
@@ -667,6 +670,26 @@
         <span class="section-tag">COMMUNITY LOVE</span>
         <h2 class="section-heading">What Our Guests Say</h2>
         <p class="section-subtext">Stories from coffee lovers, thinkers, and regulars in Hubballi.</p>
+        
+        <!-- Google Review Rating Badge & Quick Action -->
+        <div class="google-review-action-wrap">
+          <div class="google-rating-pill">
+            <span class="google-icon-svg">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/>
+                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/>
+                <path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.8s.2-2.1.4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"/>
+                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"/>
+              </svg>
+            </span>
+            <strong>4.8 ★ Google Rating</strong>
+            <span class="review-count-dot">•</span>
+            <span>420+ Verified Reviews</span>
+          </div>
+          <a href="https://www.google.com/maps/place/The+slow+house-+Cafe/@15.3610736,75.1181613,17z" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm hover-glow">
+            ⭐ Write a Review on Google
+          </a>
+        </div>
       </div>
 
       <div class="reviews-grid">
@@ -920,6 +943,67 @@
 
         <button type="submit" class="btn btn-accent btn-block hover-glow">Confirm Reservation</button>
         <p class="form-subnote">Instant confirmation. Details will also sync with WhatsApp.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- 2.5 ARTIST & OPEN MIC REGISTRATION MODAL -->
+  <dialog class="modal-dialog" id="artistModal" aria-labelledby="artistModalTitle">
+    <div class="modal-inner modal-narrow">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">HUBBALLI INDIE STAGE</span>
+          <h2 class="modal-title" id="artistModalTitle">Perform With Us</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeArtistModal()" aria-label="Close dialog">&times;</button>
+      </div>
+      
+      <form class="reservation-form" id="artistForm" onsubmit="handleArtistSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="artistName">Artist / Band Name *</label>
+            <input type="text" id="artistName" required placeholder="e.g. The Acoustic Trio / Aarav">
+          </div>
+          <div class="form-group">
+            <label for="artistPhone">WhatsApp Number *</label>
+            <input type="tel" id="artistPhone" required placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="artistType">Performance Type *</label>
+            <select id="artistType" required>
+              <option value="">Select Genre / Act</option>
+              <option value="Acoustic Singer-Songwriter (Solo/Duo)">Acoustic Singer-Songwriter (Solo/Duo)</option>
+              <option value="Indie Pop / Folk Band">Indie Pop / Folk Band</option>
+              <option value="Instrumental (Guitar / Violin / Flute)">Instrumental (Guitar / Violin / Flute)</option>
+              <option value="Spoken Word / Poetry / Storytelling">Spoken Word / Poetry / Storytelling</option>
+              <option value="Stand-up Comedy / Open Mic">Stand-up Comedy / Open Mic</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="artistSlot">Preferred Weekend Slot *</label>
+            <select id="artistSlot" required>
+              <option value="Saturday 7:00 PM">Saturday Acoustic Night (7:00 PM)</option>
+              <option value="Sunday 6:30 PM">Sunday Sunset Session (6:30 PM)</option>
+              <option value="Alternate Friday 5:00 PM">Friday Evening Coffee Lounge (5:00 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="artistSocial">Instagram / YouTube / Spotify / Demo Link *</label>
+          <input type="url" id="artistSocial" required placeholder="https://instagram.com/yourhandle">
+        </div>
+
+        <div class="form-group">
+          <label for="artistBio">Brief Bio & Setup Requirements (Optional)</label>
+          <textarea id="artistBio" rows="2" placeholder="Tell us about your style, songs you perform, mics/amp needed..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-block hover-glow">Submit Artist Application & Sync WhatsApp 🎸</button>
+        <p class="form-subnote">Our cafe curator will review your music and get back within 24–48 hours!</p>
       </form>
     </div>
   </dialog>

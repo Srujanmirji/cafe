@@ -711,6 +711,38 @@ function handleReservationSubmit(e) {
   document.getElementById('reservationForm').reset();
 }
 
+// --- ARTIST & OPEN MIC REGISTRATION MODAL ---
+function openArtistModal() {
+  const dialog = document.getElementById('artistModal');
+  if (dialog) dialog.showModal();
+}
+
+function closeArtistModal() {
+  const dialog = document.getElementById('artistModal');
+  if (dialog) dialog.close();
+}
+
+function handleArtistSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('artistName').value;
+  const phone = document.getElementById('artistPhone').value;
+  const type = document.getElementById('artistType').value;
+  const slot = document.getElementById('artistSlot').value;
+  const social = document.getElementById('artistSocial').value;
+  const bio = document.getElementById('artistBio').value;
+
+  closeArtistModal();
+  showToast(`🎸 Application received! We'll review your music and contact you soon.`);
+
+  const confirmWa = confirm(`Would you like to send your artist portfolio directly to The Slow House on WhatsApp (+91 77955 66030)?`);
+  if (confirmWa) {
+    const text = `Hello The Slow House Team,\nI would like to apply to perform at your Weekend Acoustic Sessions:\n\n• Artist/Band: ${name}\n• Contact: ${phone}\n• Act Type: ${type}\n• Preferred Slot: ${slot}\n• Music Link: ${social}${bio ? `\n• Bio/Setup: ${bio}` : ''}`;
+    window.open(`https://wa.me/917795566030?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  document.getElementById('artistForm').reset();
+}
+
 // --- SEARCH MODAL & GLOBAL SEARCH ---
 document.getElementById('searchBtn')?.addEventListener('click', () => {
   const dialog = document.getElementById('searchModal');

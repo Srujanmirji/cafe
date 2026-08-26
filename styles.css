@@ -1388,6 +1388,14 @@ button, input, select, textarea {
   color: var(--text-light-secondary);
 }
 
+.events-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
 .events-visual {
   height: 100%;
 }
@@ -1597,6 +1605,38 @@ button, input, select, textarea {
 .text-center .section-subtext {
   margin-left: auto;
   margin-right: auto;
+}
+
+.google-review-action-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.google-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--accent-gold-border);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  color: var(--text-light-primary);
+  backdrop-filter: blur(8px);
+}
+
+.google-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-count-dot {
+  opacity: 0.5;
 }
 
 .reviews-grid {
