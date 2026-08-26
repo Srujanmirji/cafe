@@ -237,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFullMenuGrid();
   checkCafeOpenStatus();
   setupHeaderScroll();
+  setupActiveNavScrollSpy();
   setupMobileDrawer();
   setupScrollReveal();
   setupScrollProgress();
@@ -426,9 +427,11 @@ function stopAmbientSound() {
   }
 }
 
-// --- HEADER SCROLL & ACTIVE NAV ---
+// --- HEADER SCROLL & DYNAMIC ACTIVE NAV SCROLLSPY ---
 function setupHeaderScroll() {
   const header = document.getElementById('siteHeader');
+  if (!header) return;
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -436,6 +439,80 @@ function setupHeaderScroll() {
       header.classList.remove('scrolled');
     }
   }, { passive: true });
+}
+
+function setupActiveNavScrollSpy() {
+  const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-link');
+  const sections = [
+    document.getElementById('home'),
+    document.getElementById('about'),
+    document.getElementById('menu'),
+    document.getElementById('events'),
+    document.getElementById('gallery'),
+    document.getElementById('contact')
+  ].filter(Boolean);
+
+  function setActiveLink(activeId) {
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${activeId}`) {
+        link.classList.add('active');
+      } else if (href && href.startsWith('#')) {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  function updateActiveSection() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.documentElement.scrollHeight;
+
+    // 1. Top of page
+    if (scrollY < 120) {
+      setActiveLink('home');
+      return;
+    }
+
+    // 2. Near bottom of page (Contact / Footer)
+    if (scrollY + windowHeight >= fullHeight - 100) {
+      setActiveLink('contact');
+      return;
+    }
+
+    // 3. Middle sections tracking
+    const scrollMiddle = scrollY + 160;
+    let currentId = 'home';
+
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollMiddle >= top && scrollMiddle < top + height) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    if (currentId) {
+      setActiveLink(currentId);
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection, { passive: true });
+  
+  // Instant check on load (including direct hash URLs like #contact)
+  setTimeout(updateActiveSection, 100);
+
+  // Click handler on navigation links to immediately set active state
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        setActiveLink(targetId);
+      }
+    });
+  });
 }
 
 // --- MOBILE MENU TOGGLE ---
