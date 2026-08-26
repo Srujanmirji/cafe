@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Slow House — Cafe & Artisan Space | Hubballi</title>
+  <meta name="description" content="Hubballi's most aesthetic slow living cafe. Specialty coffee, artisanal sourdough, decadent cheesecakes, live indie acoustic nights, and unmatched cozy vibes.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d49a62'><path d='M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z'/></svg>">
+</head>
+<body class="aesthetic-theme">
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+
+  <!-- Background Ambient Glows & Grain Texture -->
+  <div class="grain-overlay"></div>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="The Slow House Cafe Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="icon-coffee-bean">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z" opacity="0.3"/>
+            <path d="M18.8 4.2C15.5 1.5 10.5 1.8 7.3 5 4.5 7.8 4.1 12 6.1 15.3c-1.3 1.5-1.9 3.5-1.7 5.5.2 2.3 2.1 4.2 4.4 4.4 2 .2 4-0.4 5.5-1.7 3.3 2 7.5 1.6 10.3-1.2 3.2-3.2 3.5-8.2.8-11.5l-6.6-6.6zM12 19c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+            <path d="M12 6c-3.3 0-6 2.7-6 6 0 1.9.9 3.6 2.3 4.7.4-.8 1-1.5 1.7-2 1.3-.9 2-2.3 2-3.7 0-1.7-1.3-3-3-3-.3 0-.7.1-1 .2.7-1.3 2.1-2.2 3.7-2.2 2.3 0 4.2 1.8 4.3 4.1.9.3 1.7.8 2.3 1.5.3-.8.4-1.6.4-2.6 0-3.3-2.7-6-6-6z"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">THE SLOW HOUSE</span>
+          <span class="logo-subtitle">CAFE & ARTISAN SPACE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">HOME</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#vibe-finder" class="nav-link"><span class="vibe-sparkle">✨</span>VIBE CHECK</a></li>
+          <li><a href="#menu" class="nav-link">MENU</a></li>
+          <li><a href="#reservation" class="nav-link">RESERVATION</a></li>
+          <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+          <li><a href="#events" class="nav-link">EVENTS</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button class="icon-btn hover-magnetic" id="searchBtn" aria-label="Search menu" title="Search menu items">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Cart Trigger with Badge -->
+        <button class="icon-btn cart-trigger hover-magnetic" id="cartBtn" aria-label="View order bag" title="Your order bag">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Primary CTA -->
+        <button class="btn btn-accent btn-sm hover-glow" id="reserveHeaderBtn" onclick="openReservationModal()">ORDER ONLINE</button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link">HOME</a></li>
+        <li><a href="#about" class="mobile-nav-link">ABOUT</a></li>
+        <li><a href="#vibe-finder" class="mobile-nav-link">✨ VIBE CHECK</a></li>
+        <li><a href="#menu" class="mobile-nav-link">MENU</a></li>
+        <li><a href="#reservation" class="mobile-nav-link">RESERVATION</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">GALLERY</a></li>
+        <li><a href="#events" class="mobile-nav-link">EVENTS</a></li>
+        <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+      </ul>
+      <div class="mobile-nav-cta">
+        <button class="btn btn-accent btn-block" onclick="openReservationModal()">RESERVE A TABLE</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Matching Reference Image with Aesthetic Upgrades & Steam Animation) -->
+  <section class="hero-section" id="home">
+    <div class="hero-backdrop"></div>
+    <div class="container hero-container">
+      
+      <!-- Left Content Column -->
+      <div class="hero-content reveal-on-scroll">
+        <div class="hero-badge badge-shimmer">
+          <span class="pulse-dot"></span>
+          FRESHLY BREWED, ARTISANALLY CRAFTED
+        </div>
+        
+        <h1 class="hero-title">
+          Good Coffee.<br>
+          <span class="hero-italic glow-text">Great Moments.</span>
+        </h1>
+        
+        <p class="hero-description">
+          Step into The Slow House, where every cup is crafted with passion and every moment is made for you to enjoy. Hubballi's calm sanctuary for aesthetic afternoons, indie tunes, and pure slow living.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-accent hover-glow">EXPLORE MENU</a>
+          <button class="btn btn-outline hover-glow" onclick="openReservationModal()">RESERVE A TABLE</button>
+        </div>
+
+        <!-- Social Proof Widget -->
+        <div class="hero-rating-widget">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Customer avatar" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Customer avatar" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Customer avatar" class="avatar-img">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Customer avatar" class="avatar-img">
+          </div>
+          <div class="rating-info">
+            <div class="stars">
+              ★★★★★
+            </div>
+            <span class="rating-text"><strong>4.8</strong> (420+ Google Reviews) • <em>Hubballi Vibe</em></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column (Hero Coffee Showcase with Animated Steam & 3D Tilt) -->
+      <div class="hero-visual reveal-on-scroll delay-1">
+        <div class="hero-image-wrapper tilt-element">
+          
+          <!-- Animated Steam SVG -->
+          <div class="steam-container">
+            <svg class="steam-svg steam-1" viewBox="0 0 60 120">
+              <path d="M 30 100 Q 10 70 30 40 Q 50 10 30 0" fill="none" stroke="rgba(255, 255, 255, 0.45)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <svg class="steam-svg steam-2" viewBox="0 0 60 120">
+              <path d="M 30 100 Q 50 70 30 40 Q 10 10 30 0" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <svg class="steam-svg steam-3" viewBox="0 0 60 120">
+              <path d="M 30 100 Q 15 60 35 30 Q 45 10 30 0" fill="none" stroke="rgba(255, 255, 255, 0.25)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=85" alt="Artisanal Latte Art in Ceramic Cup at The Slow House" class="hero-main-img">
+          
+          <!-- Aesthetic floating badge -->
+          <div class="hero-aesthetic-sticker">
+            <span>☕ 100% Arabica</span>
+          </div>
+
+          <div class="hero-badge-overlay">
+            <div class="overlay-brand">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#d49a62"><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/></svg>
+              <span>THE SLOW HOUSE</span>
+            </div>
+            <p>Single Estate Arabica • Chikmagalur Roast</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP (Light Warm Parchment Background) -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        
+        <!-- Feature 1 -->
+        <div class="feature-card reveal-on-scroll stagger-1">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" class="feature-icon" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12a4 4 0 0 1 8 0"/>
+              <path d="M12 2a10 10 0 0 0 0 20"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">QUALITY COFFEE</h3>
+            <p class="feature-desc">Sourced from the finest beans around Chikmagalur & Coorg.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal-on-scroll stagger-2">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" class="feature-icon" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+              <line x1="6" y1="17" x2="18" y2="17"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">EXPERT BARISTAS</h3>
+            <p class="feature-desc">Passionate baristas crafting the perfect cup for you.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal-on-scroll stagger-3">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" class="feature-icon" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">COZY AMBIENCE</h3>
+            <p class="feature-desc">Relax, work, or catch up in our warm and inviting space.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal-on-scroll stagger-4">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" class="feature-icon" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <path d="M12 4v7M8 7h8"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h3 class="feature-title">DELICIOUS TREATS</h3>
+            <p class="feature-desc">Handmade pastries and desserts to pair with your coffee.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- GEN Z VIBE FINDER (INTERACTIVE MOOD PICKER)     -->
+  <!-- ============================================== -->
+  <section class="vibe-finder-section" id="vibe-finder">
+    <div class="container">
+      <div class="vibe-box reveal-on-scroll">
+        <div class="vibe-box-header">
+          <span class="section-tag">✨ MATCH YOUR MOOD</span>
+          <h2 class="section-heading">What's Your Vibe Today?</h2>
+          <p class="section-subtext">Pick your mood and we'll curate the perfect coffee & aesthetic bite pairing for you.</p>
+        </div>
+
+        <!-- Vibe Selector Chips -->
+        <div class="vibe-chips-wrapper">
+          <button class="vibe-chip active" onclick="selectVibe('deep-work')">
+            <span>💻 Deep Work & Study</span>
+          </button>
+          <button class="vibe-chip" onclick="selectVibe('first-date')">
+            <span>🕯️ Cozy Date Night</span>
+          </button>
+          <button class="vibe-chip" onclick="selectVibe('aesthetic-dump')">
+            <span>📸 Aesthetic Photo Dump</span>
+          </button>
+          <button class="vibe-chip" onclick="selectVibe('lazy-sunday')">
+            <span>🌿 Slow Weekend Chill</span>
+          </button>
+          <button class="vibe-chip" onclick="selectVibe('sweet-craving')">
+            <span>🍰 Decadent Sweet Tooth</span>
+          </button>
+        </div>
+
+        <!-- Vibe Pairing Output Result Card -->
+        <div class="vibe-result-card" id="vibeResultCard">
+          <!-- Injected via JavaScript based on chosen mood -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURATED MENU SECTION (Matching Reference 4-Card Hero Menu Grid with Glow Hover & Tilt) -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      
+      <div class="menu-header-row reveal-on-scroll">
+        <div class="menu-header-left">
+          <span class="section-tag">OUR MENU</span>
+          <h2 class="section-heading">Crafted for Every<br>Coffee Lover</h2>
+          <p class="section-subtext">
+            From rich espressos to creamy lattes and refreshing cold brews, we have something special for every taste.
+          </p>
+        </div>
+        <div class="menu-header-right">
+          <button class="btn btn-accent hover-glow" id="viewFullMenuBtn" onclick="openFullMenuModal()">VIEW FULL MENU</button>
+        </div>
+      </div>
+
+      <!-- 4 Highlight Cards matching reference screenshot -->
+      <div class="curated-menu-grid">
+        
+        <!-- Item 1: Cappuccino -->
+        <div class="menu-item-card tilt-element reveal-on-scroll stagger-1">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&auto=format&fit=crop&q=80" alt="Cappuccino" class="item-img">
+            <span class="aesthetic-pill-tag">✨ Best Seller</span>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Cappuccino</h3>
+            <p class="item-desc">Smooth, rich and perfectly balanced.</p>
+            <div class="item-footer">
+              <span class="item-price">₹160</span>
+              <button class="add-to-cart-btn hover-glow" onclick="addToCart('cappuccino', 'Cappuccino', 160, 'Coffee')" title="Add to Order">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Iced Caramel Latte -->
+        <div class="menu-item-card tilt-element reveal-on-scroll stagger-2">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600&auto=format&fit=crop&q=80" alt="Iced Caramel Latte" class="item-img">
+            <span class="aesthetic-pill-tag">🧊 Chilled</span>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Iced Caramel Latte</h3>
+            <p class="item-desc">Sweet, creamy and perfectly chilled.</p>
+            <div class="item-footer">
+              <span class="item-price">₹210</span>
+              <button class="add-to-cart-btn hover-glow" onclick="addToCart('iced-caramel-latte', 'Iced Caramel Latte', 210, 'Cold Coffee')" title="Add to Order">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Butter Croissant -->
+        <div class="menu-item-card tilt-element reveal-on-scroll stagger-3">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80" alt="Butter Croissant" class="item-img">
+            <span class="aesthetic-pill-tag">🥐 Fresh Bake</span>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Butter Croissant</h3>
+            <p class="item-desc">Flaky, buttery and baked fresh daily.</p>
+            <div class="item-footer">
+              <span class="item-price">₹140</span>
+              <button class="add-to-cart-btn hover-glow" onclick="addToCart('butter-croissant', 'Butter Croissant', 140, 'Bakery')" title="Add to Order">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Classic Cheesecake -->
+        <div class="menu-item-card tilt-element reveal-on-scroll stagger-4">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600&auto=format&fit=crop&q=80" alt="Classic Cheesecake" class="item-img">
+            <span class="aesthetic-pill-tag">🍰 Chef Pick</span>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Classic Cheesecake</h3>
+            <p class="item-desc">Rich, creamy and absolutely delicious.</p>
+            <div class="item-footer">
+              <span class="item-price">₹220</span>
+              <button class="add-to-cart-btn hover-glow" onclick="addToCart('classic-cheesecake', 'Classic Cheesecake', 220, 'Desserts')" title="Add to Order">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION (Matching the 2-Column Split Layout on Light Background) -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Left Image with Atmospheric Cafe Interior & Aesthetic Polaroid badge -->
+        <div class="about-image-column reveal-on-scroll">
+          <div class="about-image-frame tilt-element">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=85" alt="Cozy interior seating at The Slow House Hubballi" class="about-main-img">
+            <div class="about-badge-card">
+              <span class="badge-quote">“Coffee, People & Slow Times”</span>
+              <span class="badge-sub">Shirur Park • Hubballi</span>
+            </div>
+            <div class="aesthetic-polaroid-sticker">
+              <span>📍 #TheSlowHouseHubli</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-content-column reveal-on-scroll delay-1">
+          <span class="section-tag-light">ABOUT US</span>
+          <h2 class="section-heading-light">More Than Just<br>A Coffee Shop</h2>
+          <div class="divider-line"></div>
+          
+          <p class="about-narrative">
+            At The Slow House, we believe coffee brings people together. Our mission is to create a space where you can slow down, enjoy great coffee, and make beautiful memories.
+          </p>
+
+          <!-- 3 Value Pillars -->
+          <div class="about-values-list">
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Best Quality</h4>
+                <p>We use premium beans and fresh ingredients.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Community First</h4>
+                <p>A space for everyone to connect and relax.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Made with Love</h4>
+                <p>Every cup is crafted with care and passion.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="about-action">
+            <button class="btn btn-dark hover-glow" onclick="openReservationModal()">Book Your Table</button>
+            <a href="#events" class="text-link">Explore Live Music & Events &rarr;</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE MUSIC & ACOUSTIC SESSIONS -->
+  <section class="events-section" id="events">
+    <div class="container">
+      <div class="events-card-wrapper reveal-on-scroll">
+        <div class="events-content">
+          <span class="section-tag">CULTURE & SESSIONS</span>
+          <h2 class="section-heading">Acoustic Evenings &<br>Slow Living Gatherings</h2>
+          <p class="section-subtext">
+            Experience serene weekend evenings in Hubballi. From intimate indie acoustic gigs to poetry open-mics, The Slow House is where art and coffee unite.
+          </p>
+          <div class="events-meta-grid">
+            <div class="event-meta-item">
+              <span class="meta-icon">🎵</span>
+              <div>
+                <strong>Acoustic Sessions</strong>
+                <p>Every Saturday & Sunday • 7:00 PM</p>
+              </div>
+            </div>
+            <div class="event-meta-item">
+              <span class="meta-icon">☕</span>
+              <div>
+                <strong>Coffee Cupping & Tasting</strong>
+                <p>Alternate Fridays • 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-accent hover-glow" onclick="openReservationModal('Weekend Acoustic Night')">Reserve Seats for Session</button>
+        </div>
+        <div class="events-visual">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80" alt="Live music acoustic guitar evening at cafe" class="events-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM & MOMENTS GRID (Matching Reference "Moments, Made Beautiful") -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      
+      <div class="gallery-header reveal-on-scroll">
+        <div class="gallery-header-left">
+          <span class="section-tag">FOLLOW US @THESLOWHOUSECAFE</span>
+          <h2 class="section-heading">Moments, Made Beautiful</h2>
+        </div>
+        <div class="gallery-header-right">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-link">
+            VIEW INSTAGRAM &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 Photo Grid matching the screenshot strip with staggered scroll reveal -->
+      <div class="moments-grid">
+        
+        <div class="moment-tile reveal-on-scroll stagger-1" onclick="openLightbox('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&auto=format&fit=crop&q=85', 'Signature Latte Art • Single Estate')">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=80" alt="Signature Latte Art" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+        <div class="moment-tile reveal-on-scroll stagger-2" onclick="openLightbox('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&auto=format&fit=crop&q=85', 'Warm Evening Ambience • Shirur Park')">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&auto=format&fit=crop&q=80" alt="Warm Evening Ambience" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+        <div class="moment-tile reveal-on-scroll stagger-3" onclick="openLightbox('https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=1200&auto=format&fit=crop&q=85', 'Slow Drip Cold Brew • 18hr Steep')">
+          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=80" alt="Slow Drip Cold Brew" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+        <div class="moment-tile reveal-on-scroll stagger-4" onclick="openLightbox('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1200&auto=format&fit=crop&q=85', 'Freshly Baked Pastries • Daily Oven')">
+          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&auto=format&fit=crop&q=80" alt="Freshly Baked Pastries" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+        <div class="moment-tile reveal-on-scroll stagger-5" onclick="openLightbox('https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&auto=format&fit=crop&q=85', 'Alfresco Seating & Greenery')">
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=500&auto=format&fit=crop&q=80" alt="Alfresco Seating" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+        <div class="moment-tile reveal-on-scroll stagger-6" onclick="openLightbox('https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&auto=format&fit=crop&q=85', 'Fresh Espresso Extraction • Golden Crema')">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=80" alt="Fresh Espresso Extraction" class="moment-img">
+          <div class="moment-overlay">
+            <span class="moment-icon">📷</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS & VISIT US SECTION -->
+  <section class="visit-section" id="contact">
+    <div class="container">
+      <div class="visit-grid">
+        
+        <!-- Location Details Card -->
+        <div class="visit-card reveal-on-scroll">
+          <span class="section-tag">FIND US IN HUBBALLI</span>
+          <h2 class="section-heading">Come On In.<br>We're Brewing.</h2>
+          
+          <div class="location-details-list">
+            
+            <div class="location-detail-item">
+              <div class="loc-icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <p>5, Opposite Ayyappa Swamy Temple, Shirur Park, 2nd Stage, Vinayak Nagar, Hubballi, Karnataka 580021</p>
+              </div>
+            </div>
+
+            <div class="location-detail-item">
+              <div class="loc-icon">🕒</div>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Monday – Sunday: 12:00 PM – 10:00 PM</p>
+              </div>
+            </div>
+
+            <div class="location-detail-item">
+              <div class="loc-icon">📞</div>
+              <div>
+                <strong>Phone Number</strong>
+                <p><a href="tel:+917795566030" class="tel-link">+91 77955 66030</a></p>
+              </div>
+            </div>
+
+            <div class="location-detail-item">
+              <div class="loc-icon">🚗</div>
+              <div>
+                <strong>Parking & Seating</strong>
+                <p>Two-wheeler & roadside car parking available. Indoor AC & garden patio.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="visit-buttons">
+            <a href="https://www.google.com/maps/place/The+slow+house-+Cafe/@15.3610736,75.1181613,17z" target="_blank" rel="noopener noreferrer" class="btn btn-accent hover-glow">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right:8px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Open in Google Maps
+            </a>
+            <button class="btn btn-outline hover-glow" onclick="openReservationModal()">Book a Table</button>
+          </div>
+        </div>
+
+        <!-- Google Map Interactive Preview Embed -->
+        <div class="map-embed-wrapper reveal-on-scroll delay-1">
+          <iframe 
+            src="https://maps.google.com/maps?q=15.3610736,75.1181613&hl=en&z=17&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="The Slow House Cafe Map Location">
+          </iframe>
+          <div class="map-overlay-badge">
+            <strong>The Slow House - Cafe</strong>
+            <span>Shirur Park, Hubballi</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS SECTION -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-header text-center reveal-on-scroll">
+        <span class="section-tag">COMMUNITY LOVE</span>
+        <h2 class="section-heading">What Our Guests Say</h2>
+        <p class="section-subtext">Stories from coffee lovers, thinkers, and regulars in Hubballi.</p>
+      </div>
+
+      <div class="reviews-grid">
+        
+        <div class="review-card tilt-element reveal-on-scroll stagger-1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">“Hands down the most peaceful and aesthetic cafe in Hubli! The cold brew and croissant were top-notch. Love the quiet, slow-living vibe they’ve created.”</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">RP</div>
+            <div>
+              <div class="reviewer-name">Rahul Patil</div>
+              <div class="reviewer-label">Local Guide • Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card tilt-element reveal-on-scroll stagger-2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">“Attended their Saturday acoustic evening and it was magical! Very cozy seating, superb iced caramel latte, and wonderful hospitality. A hidden gem opposite Ayyappa temple.”</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">SK</div>
+            <div>
+              <div class="reviewer-name">Sneha Kulkarni</div>
+              <div class="reviewer-label">Hubballi • Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card tilt-element reveal-on-scroll stagger-3">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">“The cheesecake here is divine. Perfect place to sit with a book or catch up on remote work. The baristas know their coffee roast notes really well!”</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">AM</div>
+            <div>
+              <div class="reviewer-name">Abhishek M.</div>
+              <div class="reviewer-label">Verified Guest</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Matching Reference Screenshot Design) -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-col brand-col">
+          <div class="logo-text">
+            <div class="footer-brand-title">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#d49a62"><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/></svg>
+              <span>THE SLOW HOUSE</span>
+            </div>
+            <span class="footer-brand-sub">COFFEE HOUSE & EATERY</span>
+          </div>
+          <p class="footer-bio">
+            Good coffee, great vibes and moments to remember. Hubballi's tranquil haven for espresso & slow living.
+          </p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon hover-magnetic">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon hover-magnetic">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-icon hover-magnetic">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon hover-magnetic">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer-col newsletter-col">
+          <h4 class="footer-col-title">STAY UPDATED</h4>
+          <p class="footer-col-text">Subscribe to get special offers, updates and coffee inspo straight to your inbox.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" placeholder="Enter your email" required class="newsletter-input" id="newsletterEmail">
+            <button type="submit" class="btn btn-accent btn-sm hover-glow">SUBSCRIBE</button>
+          </form>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col links-col">
+          <h4 class="footer-col-title">QUICK LINKS</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#vibe-finder">Vibe Check</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="javascript:void(0)" onclick="openReservationModal()">Reservation</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Opening Hours Column -->
+        <div class="footer-col hours-col">
+          <h4 class="footer-col-title">OPENING HOURS</h4>
+          <div class="hours-schedule">
+            <div class="hours-row">
+              <span class="days">Monday – Friday</span>
+              <span class="time">12:00 PM - 10:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="days">Saturday – Sunday</span>
+              <span class="time">12:00 PM - 10:30 PM</span>
+            </div>
+            <div class="cafe-live-status" id="cafeStatusBadge">
+              <span class="status-indicator"></span>
+              <span id="cafeStatusText">Open Now</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Us Column -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-col-title">CONTACT US</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#d49a62" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+917795566030">+91 77955 66030</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#d49a62" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:hello@theslowhousecafe.com">hello@theslowhousecafe.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#d49a62" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>5, Opp. Ayyappa Swamy Temple, Shirur Park, Hubballi 580021</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 The Slow House - Cafe. All Rights Reserved. • Made for coffee & slow vibes.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="sep">|</span>
+          <a href="https://www.google.com/maps/place/The+slow+house-+Cafe/@15.3610736,75.1181613,17z" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODALS & INTERACTIVE DRAWERS                   -->
+  <!-- ============================================== -->
+
+  <!-- 1. FULL MENU EXPLORER MODAL -->
+  <dialog class="modal-dialog menu-modal" id="fullMenuModal" aria-labelledby="menuModalTitle">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">ARTISANAL ROASTS & BITES</span>
+          <h2 class="modal-title" id="menuModalTitle">The Slow House Full Menu</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeFullMenuModal()" aria-label="Close menu">&times;</button>
+      </div>
+
+      <!-- Menu Category Filter Tabs -->
+      <div class="menu-tabs-bar">
+        <button class="menu-tab active" onclick="filterMenu('all')">All Items</button>
+        <button class="menu-tab" onclick="filterMenu('coffee')">Specialty Coffee</button>
+        <button class="menu-tab" onclick="filterMenu('cold-brews')">Cold Brews & Iced</button>
+        <button class="menu-tab" onclick="filterMenu('bakery')">Artisan Bakery</button>
+        <button class="menu-tab" onclick="filterMenu('bites')">Gourmet Bites & Pizza</button>
+        <button class="menu-tab" onclick="filterMenu('desserts')">Desserts & Treats</button>
+      </div>
+
+      <!-- Menu Search & Veg Filter -->
+      <div class="menu-search-bar">
+        <input type="text" id="menuSearchInput" placeholder="Search dish, roast, beverage..." oninput="handleMenuSearch(event)">
+        <label class="veg-toggle">
+          <input type="checkbox" id="vegOnlyCheckbox" onchange="toggleVegOnly(event)">
+          <span>🌱 Vegetarian Only</span>
+        </label>
+      </div>
+
+      <!-- Modal Menu Items Grid -->
+      <div class="modal-menu-grid" id="fullMenuGrid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 2. TABLE RESERVATION MODAL -->
+  <dialog class="modal-dialog" id="reservationModal" aria-labelledby="reservationTitle">
+    <div class="modal-inner modal-narrow">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">JOIN US IN SHIRUR PARK</span>
+          <h2 class="modal-title" id="reservationTitle">Reserve Your Table</h2>
+        </div>
+        <button class="modal-close-btn" onclick="closeReservationModal()" aria-label="Close dialog">&times;</button>
+      </div>
+      
+      <form class="reservation-form" id="reservationForm" onsubmit="handleReservationSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resName">Full Name *</label>
+            <input type="text" id="resName" required placeholder="e.g. Anand Kumar">
+          </div>
+          <div class="form-group">
+            <label for="resPhone">Phone Number *</label>
+            <input type="tel" id="resPhone" required placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resDate">Reservation Date *</label>
+            <input type="date" id="resDate" required>
+          </div>
+          <div class="form-group">
+            <label for="resTime">Time Slot *</label>
+            <select id="resTime" required>
+              <option value="">Select Time Slot</option>
+              <option value="12:00 PM">12:00 PM (Lunch)</option>
+              <option value="01:30 PM">01:30 PM (Lunch)</option>
+              <option value="03:30 PM">03:30 PM (Coffee & Reads)</option>
+              <option value="05:00 PM">05:00 PM (Golden Hour / Sunset)</option>
+              <option value="06:30 PM">06:30 PM (Twilight Hour)</option>
+              <option value="07:30 PM">07:30 PM (Acoustic Night)</option>
+              <option value="08:30 PM">08:30 PM (Late Night & Bakes)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resGuests">Number of Guests *</label>
+            <select id="resGuests" required>
+              <option value="1">1 Person (Solo / Study / Remote Work)</option>
+              <option value="2" selected>2 Persons (Cozy Date / Meetup)</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons</option>
+              <option value="5-8">5-8 Persons (Group Lounge)</option>
+              <option value="8+">8+ Persons (Party / Gathering)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resSeating">Preferred Seating</label>
+            <select id="resSeating">
+              <option value="Indoor Cozy Lounge">Indoor Cozy Lounge (AC)</option>
+              <option value="Garden Patio">Garden Patio (Open Air)</option>
+              <option value="Near Acoustic Stage">Near Acoustic Stage</option>
+              <option value="Work & Reading Corner">Work & Reading Corner</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resSpecial">Special Notes or Dietary Preferences (Optional)</label>
+          <textarea id="resSpecial" rows="2" placeholder="Birthday celebration, oat milk, quiet study table, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-block hover-glow">Confirm Reservation</button>
+        <p class="form-subnote">Instant confirmation. Details will also sync with WhatsApp.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- 3. CART & ONLINE ORDER DRAWER -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Order Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#d49a62" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <h3>Your Order Bag</h3>
+      </div>
+      <button class="modal-close-btn" onclick="closeCartDrawer()" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Order items list -->
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Order summary & checkout footer -->
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="order-type-switch">
+        <label>
+          <input type="radio" name="orderType" value="Dine-in" checked>
+          <span>☕ Dine-in (At Cafe)</span>
+        </label>
+        <label>
+          <input type="radio" name="orderType" value="Takeaway">
+          <span>🛍️ Takeaway / Pickup</span>
+        </label>
+      </div>
+
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Taxes & Service (5%)</span>
+        <span id="cartTax">₹0</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total Amount</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+
+      <button class="btn btn-accent btn-block hover-glow" onclick="checkoutOrder()">
+        Proceed to Order (WhatsApp / Instant)
+      </button>
+    </div>
+  </aside>
+
+  <!-- 4. SEARCH MODAL -->
+  <dialog class="modal-dialog" id="searchModal" aria-labelledby="searchModalTitle">
+    <div class="modal-inner modal-narrow">
+      <div class="modal-header">
+        <h2 class="modal-title" id="searchModalTitle">Search The Slow House</h2>
+        <button class="modal-close-btn" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-input-wrap">
+        <input type="text" id="globalSearchInput" placeholder="Type coffee name, pastry, snack..." oninput="handleGlobalSearch(event)" autofocus>
+      </div>
+      <div class="search-results-list" id="searchResultsList">
+        <p class="search-placeholder">Start typing to see delicious recommendations...</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 5. LIGHTBOX MODAL (For Moments Gallery) -->
+  <dialog class="modal-dialog lightbox-dialog" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="modal-close-btn lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img src="" alt="Gallery Preview" id="lightboxImg" class="lightbox-img">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
