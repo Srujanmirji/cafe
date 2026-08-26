@@ -445,8 +445,8 @@ function setupActiveNavScrollSpy() {
   const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-link');
   const sections = [
     document.getElementById('home'),
-    document.getElementById('about'),
     document.getElementById('menu'),
+    document.getElementById('about'),
     document.getElementById('events'),
     document.getElementById('gallery'),
     document.getElementById('contact')
