@@ -234,14 +234,12 @@ let audioNodes = [];
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
-  renderFullMenuGrid();
   checkCafeOpenStatus();
   setupHeaderScroll();
   setupActiveNavScrollSpy();
   setupMobileDrawer();
   setupScrollReveal();
   setupScrollProgress();
-  setup3DTilt();
   setupLofiAudio();
   selectVibe('deep-work');
 });
@@ -251,11 +249,19 @@ function setupScrollProgress() {
   const progressBar = document.getElementById('scrollProgressBar');
   if (!progressBar) return;
 
-  window.addEventListener('scroll', () => {
+  let frameRequested = false;
+  const updateProgress = () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (totalHeight > 0) {
-      const progress = (window.scrollY / totalHeight) * 100;
-      progressBar.style.width = `${progress}%`;
+      progressBar.style.transform = `scaleX(${window.scrollY / totalHeight})`;
+    }
+    frameRequested = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!frameRequested) {
+      frameRequested = true;
+      requestAnimationFrame(updateProgress);
     }
   }, { passive: true });
 }
@@ -263,7 +269,7 @@ function setupScrollProgress() {
 // --- INTERSECTION OBSERVER SCROLL REVEALS ---
 function setupScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
-  if (!revealElements.length) return;
+  if (!revealElements.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -278,31 +284,6 @@ function setupScrollReveal() {
   });
 
   revealElements.forEach(el => observer.observe(el));
-}
-
-// --- 3D TILT EFFECT ON HOVER ---
-function setup3DTilt() {
-  const tiltElements = document.querySelectorAll('.tilt-element');
-  
-  tiltElements.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
-  });
 }
 
 // --- VIBE / MOOD PICKER CONTROLLER ---
@@ -320,7 +301,7 @@ function selectVibe(key) {
   const total = pair.drink.price + pair.bite.price;
 
   card.innerHTML = `
-    <img src="${pair.img}" alt="${pair.title}" class="vibe-result-img">
+    <img src="${pair.img}" alt="${pair.title}" class="vibe-result-img" loading="lazy" decoding="async">
     <div class="vibe-result-info">
       <span class="vibe-tag">${pair.tag}</span>
       <h3 class="vibe-result-title">${pair.title}</h3>
@@ -433,11 +414,7 @@ function setupHeaderScroll() {
   if (!header) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    header.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 }
 
@@ -451,11 +428,15 @@ function setupActiveNavScrollSpy() {
     document.getElementById('gallery'),
     document.getElementById('contact')
   ].filter(Boolean);
+  let activeId = '';
+  let frameRequested = false;
 
-  function setActiveLink(activeId) {
+  function setActiveLink(nextActiveId) {
+    if (nextActiveId === activeId) return;
+    activeId = nextActiveId;
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (href === `#${activeId}`) {
+      if (href === `#${nextActiveId}`) {
         link.classList.add('active');
       } else if (href && href.startsWith('#')) {
         link.classList.remove('active');
@@ -497,8 +478,17 @@ function setupActiveNavScrollSpy() {
     }
   }
 
-  window.addEventListener('scroll', updateActiveSection, { passive: true });
-  window.addEventListener('resize', updateActiveSection, { passive: true });
+  function requestUpdate() {
+    if (frameRequested) return;
+    frameRequested = true;
+    requestAnimationFrame(() => {
+      updateActiveSection();
+      frameRequested = false;
+    });
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
   
   // Instant check on load (including direct hash URLs like #contact)
   setTimeout(updateActiveSection, 100);
@@ -608,7 +598,7 @@ function renderFullMenuGrid() {
 
   grid.innerHTML = filtered.map(item => `
     <div class="modal-menu-card">
-      <img src="${item.img}" alt="${item.name}" class="modal-item-thumb">
+      <img src="${item.img}" alt="${item.name}" class="modal-item-thumb" loading="lazy" decoding="async">
       <div class="modal-item-info">
         <div>
           <div style="display:flex; justify-content:space-between; align-items:flex-start;">
