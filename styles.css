@@ -2008,46 +2008,43 @@ button, input, select, textarea {
    MODALS & DRAWERS (Mobile-First Responsive Modals)
    ========================================================================== */
 .modal-dialog {
-  border: none;
-  background: transparent;
-  padding: 0;
+  border: 1px solid var(--accent-gold-border);
+  background-color: var(--bg-dark-surface);
+  border-radius: 20px;
+  padding: clamp(26px, 4.5vw, 42px);
   margin: auto;
   position: fixed;
   inset: 0;
-  width: min(540px, calc(100vw - 32px));
-  max-width: calc(100vw - 32px);
-  max-height: 90vh;
-  max-height: 90dvh;
-  overflow: visible;
+  width: min(620px, calc(100vw - 36px));
+  max-width: calc(100vw - 36px);
+  max-height: 88vh;
+  max-height: 88dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: var(--text-light-primary);
+  box-shadow: var(--shadow-lg), 0 0 80px rgba(0, 0, 0, 0.95);
+  outline: none;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
   z-index: 2500;
-}
-
-.modal-dialog[open] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .modal-dialog::backdrop {
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .modal-inner {
-  background-color: var(--bg-dark-surface);
-  border: 1px solid var(--accent-gold-border);
-  border-radius: 18px;
-  padding: clamp(20px, 4.5vw, 36px);
-  color: var(--text-light-primary);
   width: 100%;
-  max-height: 85vh;
-  max-height: 85dvh;
-  overflow-y: auto;
-  box-shadow: var(--shadow-lg), 0 0 70px rgba(0, 0, 0, 0.9);
-  -webkit-overflow-scrolling: touch;
-  margin: auto;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   box-sizing: border-box;
+  overflow: visible;
+  position: relative;
 }
 
 .modal-narrow {
@@ -2055,8 +2052,8 @@ button, input, select, textarea {
 }
 
 .menu-modal.modal-dialog {
-  width: min(960px, calc(100vw - 32px));
-  max-width: calc(100vw - 32px);
+  width: min(980px, calc(100vw - 36px));
+  max-width: calc(100vw - 36px);
 }
 
 .menu-modal .modal-inner {
@@ -2065,84 +2062,119 @@ button, input, select, textarea {
 
 .modal-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 26px;
+  position: relative;
+  width: 100%;
 }
 
 .modal-tag {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--accent-gold);
   text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
 }
 
 .modal-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
   font-weight: 500;
   color: var(--text-light-primary);
-  margin-top: 4px;
+  line-height: 1.2;
 }
 
 .modal-close-btn {
+  position: absolute;
+  top: -8px;
+  right: -6px;
   background: transparent;
   border: none;
   color: var(--text-light-secondary);
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  line-height: 1;
-  min-width: 44px;
-  min-height: 44px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: color var(--transition-fast);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
 }
 
 .modal-close-btn:hover {
   color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.06);
+  transform: rotate(90deg);
 }
 
 /* Form Styles */
 .reservation-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+  width: 100%;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
+  width: 100%;
 }
 
 .form-group label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-light-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f2ede4;
+  letter-spacing: 0.02em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  background-color: var(--bg-dark-card);
-  border: 1px solid var(--border-dark);
-  border-radius: 8px;
-  padding: 12px 14px;
-  color: var(--text-light-primary);
-  font-size: 0.9rem;
-  min-height: 44px;
-  transition: border-color var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #141c18;
+  border: 1px solid rgba(212, 154, 98, 0.35);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  min-height: 48px;
+  color-scheme: dark;
+  transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #8c9791;
+  opacity: 1;
+}
+
+.form-group select option {
+  background-color: #141c18;
+  color: #ffffff;
+  padding: 10px;
 }
 
 .form-group input:focus,
@@ -2150,14 +2182,25 @@ button, input, select, textarea {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-gold);
-  box-shadow: 0 0 10px rgba(212, 154, 98, 0.2);
+  background-color: #18221d;
+  box-shadow: 0 0 14px rgba(212, 154, 98, 0.35);
+}
+
+.reservation-form .btn {
+  width: 100%;
+  min-height: 50px;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-top: 6px;
 }
 
 .form-subnote {
-  font-size: 0.76rem;
-  color: var(--text-light-muted);
+  font-size: 0.82rem;
+  color: #a4aea8;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
 /* Menu Modal Tabs & Grid */
@@ -2958,21 +3001,21 @@ button, input, select, textarea {
     width: calc(100vw - 28px) !important;
     max-width: calc(100vw - 28px) !important;
     margin: auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
     position: fixed !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    inset: 0 !important;
+    padding: 22px 18px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
   }
 
   .modal-inner {
     width: 100% !important;
     max-width: 100% !important;
-    margin: auto !important;
-    padding: 22px 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .modal-menu-grid {
