@@ -1670,7 +1670,7 @@ button, input, select, textarea {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1.3fr 0.9fr 1.2fr 1.2fr;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
   gap: clamp(24px, 4vw, 36px);
   margin-bottom: clamp(30px, 5vw, 50px);
 }
@@ -2438,7 +2438,7 @@ button, input, select, textarea {
     grid-template-columns: repeat(4, 1fr);
   }
   .footer-grid {
-    grid-template-columns: 1.4fr 1.3fr 0.9fr 1.2fr 1.2fr;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
   }
 }
 
